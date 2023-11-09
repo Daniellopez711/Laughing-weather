@@ -1,0 +1,60 @@
+<%- include("header.ejs") %>
+
+
+    <div class="postMaterial">
+        <h1 class="h3 mb-3 fw-normal headerOne">Please enter your Latitude and Longitude</h1>
+        <form class="header" method="post" >
+            
+            <div class="form-floating">
+                <input type="number" class="form-control inputDataFrom" step="any" name="latitude" id="floatingInput" required>
+                <label for="floatingInput">Latitude</label>
+            </div>
+            <div class="form-floating">
+                <input type="number" class="form-control inputDataFrom" step="any" name="longitude"  id="floatingPassword"required>
+                <label for="floatingPassword">Longitude</label>
+            </div>
+          
+            <button value="POST" formaction="/data" class="btn btn-primary w-100 py-2" type="submit" >Enter</button>
+        </form>
+   </div>
+
+ <div class="ruler">
+    
+ 
+          <div class="dataWeather">
+         
+            <% if (locals.data.latitude) { %>
+                <ul>
+                    <li id="day">Day: <%= data.day %></li>
+                    <li >Latitude: <%= data.latitude %></li>
+                    <li >Longitude: <%= data.longitude %></li>
+                    <li >Temperature: <%= data.temperature %></li>
+                    <li id="day">Weather: <%= data.weather %></li>
+                </ul>
+            <% } if (!locals.data.latitude) { %>    
+            <p><%= data %></p>
+            <% } %>
+
+ </div>
+     <div class="theButtons">
+          <div id="joke"  class="dataWeather">
+              
+            <% if (locals.joke.setup) {%>
+                <ul class="jokeList">
+                    <li><%= joke.setup %></li>
+                    <li id="deliveryJoke"><%= joke.delivery %></li>
+                </ul>
+            <% } else { %>    
+            <p> <%= joke %></p>
+            <% } %>
+
+          </div>
+           <form class="settings" method="post">
+               <button id="buttons"  class="btn btn-danger rounded-pill px-3" type="submit" value="GET" formaction="/joke">JOKE</button>
+          </form>
+     </div>
+ </div>
+ 
+
+
+<%- include("footer.ejs") %>

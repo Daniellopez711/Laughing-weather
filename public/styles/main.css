@@ -1,0 +1,204 @@
+:root {
+    --dataWeather-height: 60vh;
+    --dataWeather-width: calc(var(--dataWeather-height) / 1.5);
+  }
+
+body {
+    background-image: url("../images/pexels-pixabay-531880.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+}
+
+.dataWeather {
+    background: url("../images/pexels-miguel-á-padriñán-19670.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: var(--dataWeather-width);
+    height: var(--dataWeather-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    color: rgb(88 199 250 / 0%);
+    flex: 0 1 auto;
+}
+
+.dataWeather:hover {
+   color: rgb(88 199 250 / 100%);
+   transition: color 1s;
+}
+
+.dataWeather:hover p {
+     background-color: black;
+     width: var(--dataWeather-width);;
+}
+
+.dataWeather:hover:before,
+.dataWeather:hover:after {
+    animation: none;
+    opacity: 0;
+}
+
+.dataWeather::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+        var(--rotate),
+        #5ddcff,
+        #80eed6 43%,
+        #55a3e2
+    );
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+.dataWeather::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--dataWeather-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--dataWeather-height) / 6));
+    background-image: linear-gradient(
+        var(--rotate),
+        #5ddcff,
+        #3c67e3 43%,
+        #4e00c2
+    );
+
+  }
+
+
+  .ruler{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10em;
+
+  }
+
+ #joke {
+  background-image: url("../images/joker-smile-laugh-py-3840x2400.jpg");
+ }
+
+ #joke:hover {
+  color: rgb(250, 88, 88);
+  transition: color 1s;
+}
+#joke::before {
+  background-image: linear-gradient(
+        var(--rotate),
+        #ff685d,
+        #df1111 43%,
+        #e29455
+    );
+ 
+}
+#joke::after {
+  background-image: linear-gradient(
+        var(--rotate),
+        #ff685d,
+        #df1111 43%,
+        #e29455
+    );
+   
+}
+
+.theButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.settings {
+  margin-top: 3em;
+}
+
+#buttons {
+min-width: 100px;
+font-size: 20px;
+}
+
+ul {
+  list-style: none;
+  text-align: start;
+}
+
+#deliveryJoke{
+  animation: cssAnimation 0s 3s forwards;
+  visibility: hidden;
+  margin-top: 40px;
+}
+
+
+
+
+.headerOne {
+  font-size: 3em;
+  background-color: white;
+  border-radius: 5px;
+}
+.header{
+  max-width: 300px;
+  min-width: 300px;
+}
+.postMaterial{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.inputDataFrom  {
+  height: 50px !important;
+}
+
+#day{
+  font-size: 0.6em !important;
+}
+
+
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+@keyframes cssAnimation {
+  to   { visibility: visible; }
+}

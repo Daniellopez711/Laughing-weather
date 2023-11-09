@@ -1,0 +1,32 @@
+body {
+    background-image: url("../images/pexels-pixabay-531880.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.headerOne {
+    font-size: 3em;
+    background-color: white;
+    border-radius: 5px;
+}
+.header{
+    max-width: 300px;
+    min-width: 300px;
+}
+.postMaterial{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.inputDataFrom  {
+    height: 50px !important;
+}
